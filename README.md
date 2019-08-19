@@ -16,17 +16,17 @@ The Minimum Viable Product must be completed in three hours.
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
+- [x] Create a forked copy of this project.
 - [ ] Add your _Team Lead_ as collaborator on Github.
-- [ ] Clone your forked version of the Repository.
-- [ ] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
-- [ ] Implement the project on this Branch, committing changes regularly.
-- [ ] Push commits: git push origin `firstName-lastName`.
+- [x] Clone your forked version of the Repository.
+- [x] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
+- [x] Implement the project on this Branch, committing changes regularly.
+- [x] Push commits: git push origin `firstName-lastName`.
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge `firstName-lastName` Branch into master on **your fork, don't make Pull Requests against Lambda's repository**.
-- [ ] Please don't merge your own pull request.
+- [x] Submit a Pull-Request to merge `firstName-lastName` Branch into master on **your fork, don't make Pull Requests against Lambda's repository**.
+- [x] Please don't merge your own pull request.
 - [ ] Add your _Team Lead_ as a Reviewer on the Pull-request
 - [ ] Your _Team Lead_ will count the challenge as done by merging the branch into _master_.
 
@@ -38,13 +38,25 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] Explain the difference between `Relational Databases` and `SQL`.
+---
 
-- [ ] Why do tables need a `primary key`?
+- [x] Explain the difference between `Relational Databases` and `SQL`.
 
-- [ ] What is the name given to a table column that references the primary key on another table.
+Relational Databases are a type of data storage system which follows a relational model. SQL is a language used to query the data storage system. There are various Relational Databases that can be used such as PostgreSQL which can be accessed through the use of SQL.
 
-- [ ] What do we need in order to have a _many to many_ relationship between two tables.
+- [x] Why do tables need a `primary key`?
+
+Each row in a table bust be uniquely identifiable from the others. The primary key is the most basic form to ensure this happens.
+
+- [x] What is the name given to a table column that references the primary key on another table.
+
+This would be called a `foreign key`.
+
+- [x] What do we need in order to have a _many to many_ relationship between two tables.
+
+You would need a table that acts as a middleman between the two others. Its sole purpose would be to link connections from one table to another in an uniquely identifiable way.
+
+---
 
 ## Minimum Viable Product
 
@@ -170,3 +182,7 @@ A `context` can be applied to more than one `task`. An task can be tied to more 
 When retrieving an `task` by _id_, add a property that lists all the `contexts` related to that task.
 
 _Good luck and have fun!_
+
+---
+
+### This fork is maintained by: Eric SarragaLugo

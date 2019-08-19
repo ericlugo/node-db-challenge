@@ -1,64 +1,55 @@
-const tables = {
-  p: `project`,
-  r: `resource`,
-  t: `task`,
-  pr: `project_resource`,
-};
-
 exports.up = function(knex) {
   return knex.schema
-    .createTable(tables.p, (tbl) => {
-      tbl.increments(`${tables.p}_id`);
+    .createTable(`project`, (tbl) => {
+      tbl.increments(`project_id`);
       tbl.string(`name`, 128).notNullable();
       tbl.string(`description`);
-      tbl
-        .boolean(`completed`)
-        .notNullable()
-        .defaultTo(false);
+      tbl.boolean(`completed`).defaultTo(false);
     })
-    .createTable(tables.r, (tbl) => {
-      tbl.increments(`${tables.r}_id`);
+    .createTable(`resource`, (tbl) => {
+      tbl.increments(`resource_id`);
       tbl.string(`name`, 128).notNullable();
       tbl.string(`description`);
     })
-    .createTable(tables.t, (tbl) => {
-      tbl.increments(`${tables.t}_id`);
+    .createTable(`task`, (tbl) => {
+      tbl.increments(`task_id`);
       tbl.string(`description`).notNullable();
       tbl.string(`notes`);
+      tbl.boolean(`completed`).defaultTo(false);
       tbl
-        .boolean(`completed`)
-        .notNullable()
-        .defaultTo(false);
-      tbl
-        .integer(`${tables.p}_id`)
+        .integer(`project_id`)
         .unsigned()
         .notNullable()
-        .references(`${tables.p}_id`)
-        .inTable(tables.p)
+        .references(`project_id`)
+        .inTable(`project`)
         .onUpdate('CASCADE')
         .onDelete('CASCADE');
     })
-    .createTable(tables.pr, (tbl) => {
-      tbl.increments(`${tables.pr}_id`);
+    .createTable(`project_resource`, (tbl) => {
+      tbl.increments(`project_resource_id`);
       tbl
-        .integer(`${tables.p}_id`)
+        .integer(`project_id`)
         .unsigned()
         .notNullable()
-        .references(`${tables.p}_id`)
-        .inTable(tables.p);
+        .references(`project_id`)
+        .inTable(`project`)
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
       tbl
-        .integer(`${tables.r}_id`)
+        .integer(`resource_id`)
         .unsigned()
         .notNullable()
-        .references(`${tables.r}_id`)
-        .inTable(tables.r);
+        .references(`resource_id`)
+        .inTable(`resource`)
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
     });
 };
 
 exports.down = function(knex) {
   return knex.schema
-    .dropTableIfExists(tables.p)
-    .dropTableIfExists(tables.r)
-    .dropTableIfExists(tables.t)
-    .dropTableIfExists(tables.pr);
+    .dropTableIfExists(`project`)
+    .dropTableIfExists(`resource`)
+    .dropTableIfExists(`task`)
+    .dropTableIfExists(`project_resource`);
 };

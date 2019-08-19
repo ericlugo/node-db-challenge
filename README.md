@@ -65,14 +65,14 @@ Take the steps necessary to complete the project from scratch. Start by initiali
 Complete the following tasks:
 
 - [x] Design the data model and use _knex migrations_ to create the database and tables.
-- [ ] Build an API with endpoints for:
-  - [ ] adding resources.
-  - [ ] retrieving a list of resources.
-  - [ ] adding projects.
-  - [ ] retrieving a list of projects.
-  - [ ] adding tasks.
-  - [ ] retrieving a list of tasks. **The list of tasks should include the project name and project description**.
-- [ ] When returning `project` or `task` information, the `completed` property should be `true` or `false`.
+- [x] Build an API with endpoints for:
+  - [x] adding resources.
+  - [x] retrieving a list of resources.
+  - [x] adding projects.
+  - [x] retrieving a list of projects.
+  - [x] adding tasks.
+  - [x] retrieving a list of tasks. **The list of tasks should include the project name and project description**.
+- [x] When returning `project` or `task` information, the `completed` property should be `true` or `false`.
 
 For example, instead of returning a `task` that looks like this:
 
@@ -134,7 +134,7 @@ An `task` one of the steps needed to complete the project. We want to store the 
 
 This section is **optional** and not counted towards MVP. Start working on it after you're done with the main assignment.
 
-Add an endpoint for retrieving a `project` by its `id` that returns an object with the following structure:
+- [ ] Add an endpoint for retrieving a `project` by its `id` that returns an object with the following structure:
 
 ```js
 {
